@@ -1,5 +1,7 @@
 package problems;
 
+import utilities.CustomFileReader;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,20 +11,11 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Day1 {
-    public static BufferedReader readInputFile(String filePath) throws IOException {
-        FileReader fileReader = null;
-        try {
-            fileReader = new FileReader(filePath);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
 
-        return new BufferedReader(fileReader);
-    }
 
     public static void solveProblem1(){
         try {
-            BufferedReader bfr = readInputFile("src/resources/input.txt");
+            BufferedReader bfr = CustomFileReader.readInputFile("src/resources/input.txt");
             List<String> numbers = new ArrayList<>();
             String line;
             while((line = bfr.readLine()) != null){
@@ -50,7 +43,7 @@ public class Day1 {
     };
 
     public static void solveProblem2() throws IOException {
-        BufferedReader bfr = readInputFile("src/resources/input.txt");
+        BufferedReader bfr = CustomFileReader.readInputFile("src/resources/input.txt");
         List<String> numbers = new ArrayList<>();
         String line;
         while((line = bfr.readLine()) != null){
